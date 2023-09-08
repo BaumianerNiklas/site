@@ -11,5 +11,11 @@
   },
   "dependencies": {
     "astro": "^3.0.12"
+  },
+  "devDependencies": {
+    "@iconify-json/logos": "^1.1.35",
+    "@iconify-json/lucide": "^1.1.125",
+    "@iconify-json/uil": "^1.1.5",
+    "unocss": "^0.55.7"
   }
 }

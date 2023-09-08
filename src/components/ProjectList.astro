@@ -1,0 +1,26 @@
+---
+import { projectData } from "../data/projects";
+import ProjectCard from "./ProjectCard.astro";
+---
+
+<section class="flex content-center items-center flex-col">
+	<h1 class="gradient-text text-center text-4xl">Projects</h1>
+	<p class="text-center my-6 text-xl">
+		Here's a selection of things I am currently working on or have made in
+		the past. I'm a big believer in the principles of open source so you'll
+		find the source code to all my projects on GitHub :D
+	</p>
+
+	<div class="grid gap-4 max-w-[75vw]">
+		{projectData.map((project) => <ProjectCard {project} />)}
+	</div>
+</section>
+
+<style>
+	p {
+		max-width: min(85vw, 65rem);
+	}
+	div.grid {
+		grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+	}
+</style>

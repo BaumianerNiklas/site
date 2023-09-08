@@ -1,0 +1,19 @@
+---
+import { Technology } from "../data/projects";
+
+interface Props {
+	technology: Technology;
+}
+
+const { technology } = Astro.props;
+
+const iconNames = {
+	[Technology.Rust]: "i-logos-rust",
+	[Technology.Svelte]: "i-logos-svelte-icon",
+	[Technology.TypeScript]: "i-logos-typescript-cion",
+};
+
+const iconName = iconNames[technology];
+---
+
+<div class=`${iconName} w-6 h-6`></div>

@@ -1,0 +1,44 @@
+---
+import type { Project } from "../data/projects";
+import TechnologyIcon from "./TechnologyIcon.astro";
+
+interface Props {
+	project: Project;
+}
+
+const { project } = Astro.props;
+---
+
+<div class="flex flex-col p-4 rounded-3 bg-#14171e">
+	<div class="flex gap-2 mb-1">
+		<h2 class="gradient-text">{project.name}</h2>
+		<div class="flex items-center gap-1">
+			{
+				project.repoName && (
+					<div class="grid place-items-center">
+						<a
+							href="https://github.com/BaumianerNiklas/{project.repoName}"
+							target="blank"
+						>
+							<div class="i-uil-github-alt w-6 h-6 text-white" />
+						</a>
+					</div>
+				)
+			}
+
+			{
+				project.url && (
+					<div class="grid place-items-center">
+						<a href={project.url} target="blank">
+							<div class="i-uil-link w-6 h-6 text-white" />
+						</a>
+					</div>
+				)
+			}
+		</div>
+	</div>
+	<p class="mb-2 text-lg">{project.description}</p>
+	<div class="ml-auto mt-auto flex gap-1">
+		{project.stack.map((technology) => <TechnologyIcon {technology} />)}
+	</div>
+</div>
